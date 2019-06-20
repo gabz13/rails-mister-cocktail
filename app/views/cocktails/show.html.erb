@@ -18,5 +18,9 @@
 <p class="btn btn-outline-dark"><%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %></p>
 
 <p class="btn btn-outline-dark"><%= link_to "See all cocktails", cocktails_path %></p>
+
+<p class="btn btn-outline-dark"><%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete,
+      data: { confirm: "Are you sure?" } %></p>
+
 </div>
 
