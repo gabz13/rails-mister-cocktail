@@ -1,8 +1,10 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60);">
   <div class="container d-flex align-items-center flex-column">
-    <h1><strong>Cocktails!</strong></h1>
-
+    <h1><strong>Mr. Jeff's Cocktails</strong> <i class="fas fa-cocktail"></i></i></h1>
+    <br>
+    <br>
+    <br>
     <a><%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-outline-light center" %></a>
 
   </div>
@@ -11,25 +13,21 @@
 
 
 
-<div class="cotainer">
-<div class="row mt-5 mb-5">
-
-   <!--  <div class="d-flex justify-content-between"> -->
+<div class="container">
+  <div class="row mt-5 mb-5">
+    <!-- <div class="d-flex justify-content-between"> -->
       <% @cocktails.each do |cocktail| %>
-<div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card-drink">
-        <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card-drink mt-3">
+          <%= cl_image_tag cocktail.photo, height: 300, crop: :fill%>
 
-        <!-- <img src="https://images.pexels.com/photos/1232152/pexels-photo-1232152.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"> -->
-          <div class="card-drink-infos">
-            <div>
-              <p><%= link_to cocktail.name, cocktail_path(cocktail), class: "btn-outline-dark center" %></p>
+          <!-- <img src="https://images.pexels.com/photos/1232152/pexels-photo-1232152.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"> -->
+             <%= link_to cocktail.name, cocktail_path(cocktail) %>
         </div>
       </div>
+      <% end %>
     </div>
-    </div>
-  <% end %>
-</div>
+  </div>
 </div>
 
 
