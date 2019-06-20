@@ -1,15 +1,18 @@
-<body class="new-image">
+<body class="new-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517093911940-08cb5b3952e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=766&q=80);">
 <div class="container ">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <h1>Create a new cocktail</h1>
+      <div class="create-form">
       <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= f.submit class: 'btn btn-primary' %>
+       <%= f.input :photo %> <%= f.input :photo_cache, as: :hidden %> <%= f.submit class: 'btn btn-outline-info' %>
+        </div>
       <% end %>
     </div>
   </div>
 </div>
 </body>
+
+
+

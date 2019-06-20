@@ -1,34 +1,33 @@
 <!-- <div class="row">
   <div class="col-xs-12 col-sm-10 col-sm-offset-1"> -->
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo, crop: :limit %>');">
-        <div class="container d-flex align-items-center flex-column">
-          <h1><%= @cocktail.name %></h1>
+      <div class="container d-flex align-items-center flex-column">
+        <h1><%= @cocktail.name %></h1>
       </div>
     </div>
-      <div class="container pt-4">
-          <h4>Ingredients:</h4>
+    <div class="container pt-4">
+      <div class="d-flex justify-content-between">
+      <h4>Ingredients:</h4> <p class="btn btn-outline-dark"><%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %></p>
+      </div>
+
       <% @cocktail.doses.each do |dose| %>
-      <ol><p> <%= dose.ingredient.name %> Description: <%= dose.description %> | <%= link_to "Delete dose", dose_path(dose),
+      <ol><p> <%= dose.ingredient.name %> : <%= dose.description %> | <%= link_to "Delete dose", dose_path(dose),
       method: :delete,
       data: { confirm: "Are you sure?" } %> </p>
 
-      </ol>
-      <% end %>
-      </div>
+    </ol>
+    <% end %>
+  </div>
 
 
 
+  <div class="container pt-4">
+    <p class="btn btn-outline-dark"><%= link_to "See all cocktails", cocktails_path %></p>
 
+    <p class="btn btn-outline-dark"><%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete,
+    data: { confirm: "Are you sure?" } %></p>
 
-<div class="container pt-4">
-<p class="btn btn-outline-dark"><%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %></p>
-
-<p class="btn btn-outline-dark"><%= link_to "See all cocktails", cocktails_path %></p>
-
-<p class="btn btn-outline-dark"><%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete,
-      data: { confirm: "Are you sure?" } %></p>
-
-</div>
+  </div>
 
 
 
